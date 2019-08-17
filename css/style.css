@@ -15,6 +15,7 @@ header {
     header .profile .row .block_left {
       display: flex;
       flex-direction: column;
+      flex-wrap: wrap;
       padding-left: 60px; }
       header .profile .row .block_left .monblan {
         display: flex;
@@ -39,13 +40,17 @@ header {
       header .profile .row .block_left .following span {
         margin-right: 29px;
         font-size: 17px;
+        font-family: "ProximaNova";
         color: #3d4044;
         line-height: 1.412; }
       header .profile .row .block_left .dates {
         font-size: 17px;
         font-family: "Tahoma";
         color: #262626;
-        line-height: 1.412; }
+        line-height: 1.412;
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap; }
 
 .block_medium {
   padding-top: 70px;
@@ -53,15 +58,26 @@ header {
   padding-left: 17%; }
   .block_medium .thumb {
     max-width: 292px;
+    height: 292px;
     position: relative;
     display: flex;
     z-index: 0; }
+    .block_medium .thumb a {
+      text-decoration: none;
+      cursor: default; }
+      .block_medium .thumb a img {
+        margin: 0 0 30px 0;
+        position: relative; }
+        .block_medium .thumb a img .img-fluid {
+          background-color: #7d7d7d;
+          opacity: 1; }
     .block_medium .thumb .info_image {
       opacity: 0;
       position: absolute;
       top: 45%;
       left: 10%;
-      z-index: 4; }
+      z-index: 4;
+      transition: 0.3s; }
       .block_medium .thumb .info_image .info_ {
         display: flex;
         justify-content: space-between;
@@ -75,22 +91,11 @@ header {
         line-height: 1.412; }
         .block_medium .thumb .info_image span img {
           margin-right: 6px; }
-      .block_medium .thumb .info_image .info_1 {
-        padding-top: 30px; }
     .block_medium .thumb .info_image:hover {
       opacity: 1; }
-    .block_medium .thumb a {
-      text-decoration: none;
-      cursor: default; }
-      .block_medium .thumb a img {
-        margin: 0 0 30px 0;
-        position: relative; }
-        .block_medium .thumb a img :hover {
-          background-color: rgba(0, 0, 0, 0.5);
-          z-index: 15; }
-  .block_medium .img:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 15; }
+  .block_medium .thumb:hover .img-fluid {
+    opacity: 0.6;
+    z-index: 3; }
 
 footer {
   text-align: center;
@@ -109,6 +114,23 @@ footer {
     text-decoration: none; }
   footer a:hover {
     text-decoration: none;
-    color: black; }
+    color: black;
+    transition: 0.3s; }
+
+@media (max-width: 1020px) {
+  .dates .media {
+    margin-left: 50px; }
+
+  .block_medium {
+    padding-left: 10%; } }
+@media (max-width: 998px) {
+  .block_left {
+    padding-left: 20px !important; }
+    .block_left .following span {
+      margin-right: 5px !important;
+      font-size: 15px; }
+
+  .block_medium {
+    padding-left: 0; } }
 
 /*# sourceMappingURL=style.css.map */

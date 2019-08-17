@@ -14,12 +14,12 @@ header {
       .logo {
         display: flex;
         justify-content: flex-end;
-
       }
       .block_left {
         display: flex;
         flex-direction: column;
-        padding-left:60px ;
+        flex-wrap: wrap;
+        padding-left: 60px;
         .monblan {
           display: flex;
           flex-direction: row;
@@ -41,14 +41,13 @@ header {
             text-shadow: 1px 0 rgba(64, 144, 219, 0.7);
             color: rgb(64, 144, 219);
             height: fit-content;
-
           }
         }
         .following {
           span {
             margin-right: 29px;
             font-size: 17px;
-            //font-family: "ProximaNova";
+            font-family: "ProximaNova";
             color: rgb(61, 64, 68);
             line-height: 1.412;
           }
@@ -58,6 +57,9 @@ header {
           font-family: "Tahoma";
           color: rgb(38, 38, 38);
           line-height: 1.412;
+          display: flex;
+          align-items: baseline;
+          flex-wrap: wrap;
         }
       }
     }
@@ -70,22 +72,34 @@ header {
   padding-left: 17%;
   .thumb {
     max-width: 292px;
+    height: 292px;
     position: relative;
     display: flex;
     z-index: 0;
+    a {
+      text-decoration: none;
+      cursor: default;
+      img {
+        margin: 0 0 30px 0;
+        position: relative;
+        .img-fluid {
+          background-color: rgba(125, 125, 125, 1);
+          opacity: 1;
+        }
+      }
+    }
     .info_image {
-
       opacity: 0;
       position: absolute;
       top: 45%;
       left: 10%;
       z-index: 4;
-      .info_{
+      transition: 0.3s;
+      .info_ {
         display: flex;
         justify-content: space-between;
         padding-bottom: 20px;
       }
-
       span {
         padding-right: 20px;
         padding-left: 5px;
@@ -97,109 +111,68 @@ header {
           margin-right: 6px;
         }
       }
-      .info_1{
-        padding-top: 30px;
+      .info_1 {
       }
     }
-    .info_image:hover{
+    .info_image:hover {
       opacity: 1;
-
     }
+  }
+  .thumb:hover {
+    .img-fluid {
+      opacity: 0.6;
+      z-index: 3;
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  padding-bottom: 75px;
+  a {
+    font-size: 12px;
+    font-family: "ProximaNova";
+    color: rgb(0, 0, 0);
+    line-height: 2;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(250, 250, 250);
+    padding: 9px 28px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
+  }
+}
 
 
-    a {
-      text-decoration: none;
-      cursor: default;
-      img {
-        margin: 0 0 30px 0;
-        position: relative;
-        :hover {
-          background-color: rgba(0, 0, 0, 0.5);
-          z-index: 15;
-        }
 
+@media (max-width: 1020px) {
+  .dates {
+    .media {
+      margin-left: 50px;
+    }
+  }
+  .block_medium {
+    padding-left: 10%;
+  }
+}
+
+@media (max-width: 998px) {
+  .block_left {
+    padding-left: 20px !important;
+    .following {
+      span {
+        margin-right: 5px !important;
+        font-size: 15px;
       }
     }
   }
-.img:hover{
-  background-color: rgba(0, 0, 0, 0.5);
-      z-index: 15;
-
-}
-}
-
-
-
-  //.gallery {
-  //  text-align: center;
-  //  margin-top: 34px;
-  //  padding-top: 70px;
-  //  width: 100%;
-  //  display: flex;
-  //  flex-direction: row;
-  //  .mdb-lightbox {
-  //    display: flex;
-  //    flex-wrap: wrap;
-  //    .img-fluid {
-  //      margin: 0 15px 15px 15px;
-  //    }
-  //    figure {
-  //      position: relative;
-  //      .info_image {
-  //        opacity: 1;
-  //        z-index: 5;
-  //        width: 100%;
-  //        position: absolute;
-  //        font-size: 15px;
-  //        pointer-events: none;
-  //        color: #ffffff;
-  //        bottom: 20px;
-  //        .info_ {
-  //          display: flex;
-  //          justify-content: space-around;
-  //          padding-bottom: 20px;
-  //          span {
-  //            padding-right: 20px;
-  //            padding-left: 5px;
-  //            font-size: 17px;
-  //            font-family: "ProximaNova";
-  //            color: rgb(255, 255, 255);
-  //            line-height: 1.412;
-  //            img {
-  //              margin-right: 5px;
-  //            }
-  //          }
-  //        }
-  //        .info_1 {
-  //          padding-bottom: 20px;
-  //          display: flex;
-  //          justify-content: center;
-  //        }
-  //      }
-  //      .info_image:hover{
-  //      }
-  //    }
-  //  }
-  //}
-
-  footer {
-    text-align: center;
-    padding-bottom: 75px;
-    a {
-      font-size: 12px;
-      font-family: "ProximaNova";
-      color: rgb(0, 0, 0);
-      line-height: 2;
-      border: 1px solid rgb(0, 0, 0);
-      background-color: rgb(250, 250, 250);
-      padding: 9px 28px;
-      border-radius: 30px;
-      text-transform: uppercase;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    a:hover{
-      text-decoration: none;
-      color:rgb(0, 0, 0);
-    }
+  .block_medium {
+    padding-left: 0;
   }
+}
